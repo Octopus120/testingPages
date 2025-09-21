@@ -1,0 +1,1235 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+<html lang="en"><html lang="en">
+
+<head><head>
+
+    <meta charset="UTF-8">    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Easy Click Extension - Testing Suite</title>    <title>Easy Click Extension - Testing Suite</title>
+
+    <style>    <style>
+
+        body {        body {
+
+            font-family: Arial, sans-serif;            font-family: Arial, san    <div class="container" id="dataContainer">
+
+            max-width: 1200px;        <div class="success-message" id="successMessage" style="display: none;"></div>
+
+            margin: 0 auto;        
+
+            padding: 20px;        <h2>📊 Main Projects Table - Column Header Test</h2>
+
+            background-color: #f5f5f5;        <p style="color: #666; margin-bottom: 15px;">
+
+        }            <strong>Test Objective:</strong> Verify that column selection dialog shows meaningful headers like "Project Name", "GitHub Repo" instead of generic "Column 1", "Column 2".
+
+                </p>rif;
+
+        .container {            max-width: 1200px;
+
+            background: white;            margin: 0 auto;
+
+            padding: 30px;            padding: 20px;
+
+            border-radius: 10px;            background-color: #f5f5f5;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);        }
+
+            margin-bottom: 30px;        
+
+        }        .container {
+
+                    background: white;
+
+        h1, h2 {            padding: 30px;
+
+            color: #333;            border-radius: 10px;
+
+            text-align: center;            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        }            margin-bottom: 30px;
+
+                }
+
+        .btn {        
+
+            padding: 12px 24px;        h1, h2 {
+
+            margin: 0 10px;            color: #333;
+
+            border: none;            text-align: center;
+
+            border-radius: 5px;        }
+
+            cursor: pointer;        
+
+            font-size: 16px;        .btn {
+
+            font-weight: bold;            padding: 12px 24px;
+
+            text-decoration: none;            margin: 0 10px;
+
+            display: inline-block;            border: none;
+
+            transition: all 0.3s;            border-radius: 5px;
+
+        }            cursor: pointer;
+
+                    font-size: 16px;
+
+        .btn-primary {            font-weight: bold;
+
+            background: #4CAF50;            text-decoration: none;
+
+            color: white;            display: inline-block;
+
+        }            transition: all 0.3s;
+
+                }
+
+        .btn-primary:hover {        
+
+            background: #45a049;        .btn-primary {
+
+            transform: translateY(-2px);            background: #4CAF50;
+
+        }            color: white;
+
+                }
+
+        .btn-secondary {        
+
+            background: #2196F3;        .btn-primary:hover {
+
+            color: white;            background: #45a049;
+
+        }            transform: translateY(-2px);
+
+                }
+
+        .btn-secondary:hover {        
+
+            background: #1976D2;        .btn-secondary {
+
+            transform: translateY(-2px);            background: #2196F3;
+
+        }            color: white;
+
+                }
+
+        .btn-warning {        
+
+            background: #FF9800;        .btn-secondary:hover {
+
+            color: white;            background: #1976D2;
+
+        }            transform: translateY(-2px);
+
+                }
+
+        .btn-warning:hover {        
+
+            background: #F57C00;        .btn-warning {
+
+            transform: translateY(-2px);            background: #FF9800;
+
+        }            color: white;
+
+                }
+
+        .btn-danger {        
+
+            background: #f44336;        .btn-warning:hover {
+
+            color: white;            background: #F57C00;
+
+        }            transform: translateY(-2px);
+
+                }
+
+        .btn-danger:hover {        
+
+            background: #d32f2f;        .btn-danger {
+
+            transform: translateY(-2px);            background: #f44336;
+
+        }            color: white;
+
+                }
+
+        .data-table {        
+
+            width: 100%;        .btn-danger:hover {
+
+            border-collapse: collapse;            background: #d32f2f;
+
+            margin-top: 20px;            transform: translateY(-2px);
+
+        }        }
+
+                
+
+        .data-table th,        .data-table {
+
+        .data-table td {            width: 100%;
+
+            padding: 12px;            border-collapse: collapse;
+
+            text-align: left;            margin-top: 20px;
+
+            border-bottom: 1px solid #ddd;        }
+
+        }        
+
+                .data-table th,
+
+        .data-table th {        .data-table td {
+
+            background-color: #f8f9fa;            padding: 12px;
+
+            font-weight: bold;            text-align: left;
+
+            color: #333;            border-bottom: 1px solid #ddd;
+
+        }        }
+
+                
+
+        .data-table tr:hover {        .data-table th {
+
+            background-color: #f5f5f5;            background-color: #f8f9fa;
+
+        }            font-weight: bold;
+
+                    color: #333;
+
+        .link-button {        }
+
+            color: #2196F3;        
+
+            text-decoration: none;        .data-table tr:hover {
+
+            font-weight: bold;            background-color: #f5f5f5;
+
+            padding: 4px 8px;        }
+
+            border-radius: 3px;        
+
+            transition: all 0.2s;        .link-button {
+
+        }            color: #2196F3;
+
+                    text-decoration: none;
+
+        .link-button:hover {            font-weight: bold;
+
+            background-color: #2196F3;            padding: 4px 8px;
+
+            color: white;            border-radius: 3px;
+
+        }            transition: all 0.2s;
+
+                }
+
+        .success-message {        
+
+            background: #d4edda;        .link-button:hover {
+
+            color: #155724;            background-color: #2196F3;
+
+            padding: 15px;            color: white;
+
+            border-radius: 5px;        }
+
+            margin-bottom: 20px;        
+
+            border: 1px solid #c3e6cb;        .success-message {
+
+        }            background: #d4edda;
+
+                    color: #155724;
+
+        .action-buttons {            padding: 15px;
+
+            display: flex;            border-radius: 5px;
+
+            gap: 10px;            margin-bottom: 20px;
+
+            flex-wrap: wrap;            border: 1px solid #c3e6cb;
+
+            justify-content: center;        }
+
+            margin: 20px 0;        
+
+        }        .action-buttons {
+
+                    display: flex;
+
+        .test-section {            gap: 10px;
+
+            background: #e3f2fd;            flex-wrap: wrap;
+
+            padding: 20px;            justify-content: center;
+
+            border-radius: 8px;            margin: 20px 0;
+
+            margin: 20px 0;        }
+
+        }        
+
+                .test-section {
+
+        .about-section {            background: #e3f2fd;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);            padding: 20px;
+
+            color: white;            border-radius: 8px;
+
+            padding: 40px;            margin: 20px 0;
+
+            border-radius: 20px;        }
+
+            margin: 30px 0;        
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);        .about-section {
+
+        }            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+                    color: white;
+
+        .feature-grid {            padding: 40px;
+
+            display: grid;            border-radius: 20px;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));            margin: 30px 0;
+
+            gap: 20px;            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+            margin: 30px 0;        }
+
+        }        
+
+                .feature-grid {
+
+        .feature-card {            display: grid;
+
+            background: rgba(255, 255, 255, 0.1);            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            padding: 20px;            gap: 20px;
+
+            border-radius: 12px;            margin: 30px 0;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);        }
+
+            backdrop-filter: blur(10px);        
+
+        }        .feature-card {
+
+                    background: rgba(255, 255, 255, 0.1);
+
+        .feature-card h3 {            padding: 20px;
+
+            margin: 0 0 10px 0;            border-radius: 12px;
+
+            color: #FFD700;            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        }            backdrop-filter: blur(10px);
+
+                }
+
+        .version-info {        
+
+            text-align: center;        .feature-card h3 {
+
+            margin-top: 20px;            margin: 0 0 10px 0;
+
+            opacity: 0.8;            color: #FFD700;
+
+            font-size: 14px;        }
+
+        }        
+
+    </style>        .version-info {
+
+</head>            text-align: center;
+
+<body>            margin-top: 20px;
+
+    <div class="container">            opacity: 0.8;
+
+        <h1>🎯 Easy Click Extension - Testing Suite</h1>            font-size: 14px;
+
+        <p style="text-align: center; color: #666; font-size: 18px;">        }
+
+            Comprehensive test page for the Easy Click Chrome extension.<br>    </style>
+
+            <strong>Install the extension, then test the functionality below!</strong></head>
+
+        </p><body>
+
+                <div class="container">
+
+        <div style="background: #e8f5e9; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin: 20px 0;">        <h1>🎯 Easy Click Extension - Testing Suite</h1>
+
+            <h3 style="margin-top: 0; color: #155724;">📋 How to Test the Extension:</h3>        <p style="text-align: center; color: #666; font-size: 18px;">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: #155724;">            Comprehensive test page for the Easy Click Chrome extension.<br>
+
+                <div>            <strong>Install the extension, then test the functionality below!</strong>
+
+                    <h4>🔘 Button Cloning Test:</h4>        </p>
+
+                    <ul>        
+
+                        <li><strong>Left-click + drag</strong> any button below</li>        <div style="background: #e8f5e9; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin: 20px 0;">
+
+                        <li>Button should be cloned to extension sidebar</li>            <h3 style="margin-top: 0; color: #155724;">📋 How to Test the Extension:</h3>
+
+                        <li>Test different button types and actions</li>            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: #155724;">
+
+                    </ul>                <div>
+
+                </div>                    <h4>🔘 Button Cloning Test:</h4>
+
+                <div>                    <ul>
+
+                    <h4>📊 Table Row Click Test:</h4>                        <li><strong>Left-click + drag</strong> any button below</li>
+
+                    <ul>                        <li>Button should be cloned to extension sidebar</li>
+
+                        <li><strong>Single-click</strong> any table row</li>                        <li>Test different button types and actions</li>
+
+                        <li>Should show column selection dialog</li>                    </ul>
+
+                        <li>Headers should be meaningful (not "Column 1")</li>                </div>
+
+                        <li>Check console for debug output</li>                <div>
+
+                    </ul>                    <h4>📊 Table Row Click Test:</h4>
+
+                </div>                    <ul>
+
+            </div>                        <li><strong>Single-click</strong> any table row</li>
+
+        </div>                        <li>Should show column selection dialog</li>
+
+    </div>                        <li>Headers should be meaningful (not "Column 1")</li>
+
+                        <li>Check console for debug output</li>
+
+    <div class="container test-section">                    </ul>
+
+        <h2>🧪 Action Test Buttons</h2>                </div>
+
+        <p>These buttons demonstrate various actions that can be cloned:</p>            </div>
+
+        <div class="action-buttons">        </div>
+
+            <button class="btn btn-primary" data-action="alert">🎉 Show Alert</button>    </div>
+
+            <button class="btn btn-secondary" data-action="google">🌐 Open Google</button>
+
+            <button class="btn btn-warning" data-action="toggle-bg">🎨 Toggle Background</button>    <div class="container test-section">
+
+            <button class="btn btn-danger" data-action="scroll-top">⬆️ Scroll to Top</button>        <h2>🧪 Action Test Buttons</h2>
+
+            <a href="https://github.com" class="btn btn-primary" target="_blank">🔗 GitHub Link</a>        <p>These buttons demonstrate various actions that can be cloned:</p>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="btn btn-secondary" target="_blank">📝 JavaScript Docs</a>        <div class="action-buttons">
+
+        </div>            <button class="btn btn-primary" data-action="alert">🎉 Show Alert</button>
+
+    </div>            <button class="btn btn-secondary" data-action="google">🌐 Open Google</button>
+
+            <button class="btn btn-warning" data-action="toggle-bg">🎨 Toggle Background</button>
+
+    <!-- About Section -->            <button class="btn btn-danger" data-action="scroll-top">⬆️ Scroll to Top</button>
+
+    <div class="about-section">            <a href="https://github.com" class="btn btn-primary" target="_blank">🔗 GitHub Link</a>
+
+        <h1 style="text-align: center; margin-bottom: 30px;">🎯 About Easy Click Extension</h1>            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="btn btn-secondary" target="_blank">📝 JavaScript Docs</a>
+
+                </div>
+
+        <div class="feature-grid">    </div>
+
+            <div class="feature-card">
+
+                <h3>🖱️ Smart Table Row Clicking</h3>    <!-- About Section -->
+
+                <p>Automatically detect and click links in table rows. Set column preferences for multi-link rows.</p>    <div class="about-section">
+
+            </div>        <h1 style="text-align: center; margin-bottom: 30px;">🎯 About Easy Click Extension</h1>
+
+                    
+
+            <div class="feature-card">        <div class="feature-grid">
+
+                <h3>🎯 Column Preferences</h3>            <div class="feature-card">
+
+                <p>Save your preferred column for tables with multiple links. Single-click behavior with intelligent fallbacks.</p>                <h3>🖱️ Smart Table Row Clicking</h3>
+
+            </div>                <p>Automatically detect and click links in table rows. Set column preferences for multi-link rows.</p>
+
+                        </div>
+
+            <div class="feature-card">            
+
+                <h3>🖼️ Iframe Support</h3>            <div class="feature-card">
+
+                <p>Works seamlessly across iframes and embedded content. Unified experience across all page elements.</p>                <h3>🎯 Column Preferences</h3>
+
+            </div>                <p>Save your preferred column for tables with multiple links. Single-click behavior with intelligent fallbacks.</p>
+
+                        </div>
+
+            <div class="feature-card">            
+
+                <h3>🔧 ServiceNow Compatible</h3>            <div class="feature-card">
+
+                <p>Special handling for ServiceNow grids and enterprise applications. Supports both standard tables and custom grids.</p>                <h3>🖼️ Iframe Support</h3>
+
+            </div>                <p>Works seamlessly across iframes and embedded content. Unified experience across all page elements.</p>
+
+        </div>            </div>
+
+                    
+
+        <div class="version-info">            <div class="feature-card">
+
+            Version 1.0 | Easy Click Extension | Test Suite                <h3>🔧 ServiceNow Compatible</h3>
+
+        </div>                <p>Special handling for ServiceNow grids and enterprise applications. Supports both standard tables and custom grids.</p>
+
+                    </div>
+
+        <div style="text-align: center; margin-top: 30px;">        </div>
+
+            <a href="https://chrome.google.com/webstore" class="btn btn-primary" target="_blank">📦 Install from Chrome Web Store</a>        
+
+            <a href="https://github.com/Octopus120/AutoTextPluginFirefox-" class="btn btn-secondary" target="_blank">📖 View Source Code</a>        <div class="version-info">
+
+        </div>            Version 1.0 | Easy Click Extension | Test Suite
+
+    </div>        </div>
+
+        
+
+    <div class="container" id="dataContainer">        <div style="text-align: center; margin-top: 30px;">
+
+        <div class="success-message" id="successMessage" style="display: none;"></div>            <a href="https://chrome.google.com/webstore" class="btn btn-primary" target="_blank">📦 Install from Chrome Web Store</a>
+
+                    <a href="https://github.com/Octopus120/AutoTextPluginFirefox-" class="btn btn-secondary" target="_blank">📖 View Source Code</a>
+
+        <h2>📊 Main Projects Table - Column Header Test</h2>        </div>
+
+        <p style="color: #666; margin-bottom: 15px;">    </div>
+
+            <strong>Test Objective:</strong> Verify that column selection dialog shows meaningful headers like "Project Name", "GitHub Repo" instead of generic "Column 1", "Column 2".
+
+        </p>    <div class="container" id="dataContainer">
+
+                <div class="success-message" id="successMessage" style="display: none;"></div>
+
+        <table class="data-table" id="employeeTable">        
+
+            <thead>        <h2>� Projects Table</h2>
+
+                <tr>        <table class="data-table" id="employeeTable">
+
+                    <th>Project ID</th>            <thead>
+
+                    <th>Project Name</th>                <tr>
+
+                    <th>GitHub Repo</th>                    <th>Project ID</th>
+
+                    <th>Demo Link</th>                    <th>Project Name</th>
+
+                    <th>Documentation</th>                    <th>GitHub Repo</th>
+
+                    <th>Status</th>                    <th>Demo Link</th>
+
+                    <th>Team Lead</th>                    <th>Documentation</th>
+
+                </tr>                    <th>Status</th>
+
+            </thead>                    <th>Team Lead</th>
+
+            <tbody id="tableBody">                </tr>
+
+                <!-- Sample data will be populated here by JavaScript -->            </thead>
+
+                <!-- Fallback static rows in case JavaScript fails -->            <tbody id="tableBody">
+
+                <tr>                <!-- Sample data will be populated here by JavaScript -->
+
+                    <td>PRJ-001</td>                <!-- Fallback static rows in case JavaScript fails -->
+
+                    <td>E-Commerce Platform</td>                <tr>
+
+                    <td><a href="https://github.com/example/ecommerce" class="link-button" target="_blank">📦 Repository</a></td>                    <td>PRJ-001</td>
+
+                    <td><a href="https://demo.ecommerce.com" class="link-button" target="_blank">🌐 Live Demo</a></td>                    <td>E-Commerce Platform</td>
+
+                    <td><a href="https://docs.ecommerce.com" class="link-button" target="_blank">📖 Docs</a></td>                    <td><a href="https://github.com/example/ecommerce" class="link-button" target="_blank">📦 Repository</a></td>
+
+                    <td>✅ Active</td>                    <td><a href="https://demo.ecommerce.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+
+                    <td>Sarah Chen</td>                    <td><a href="https://docs.ecommerce.com" class="link-button" target="_blank">📖 Docs</a></td>
+
+                </tr>                    <td>✅ Active</td>
+
+                <tr>                    <td>Sarah Chen</td>
+
+                    <td>PRJ-002</td>                </tr>
+
+                    <td>Mobile Banking App</td>                <tr>
+
+                    <td><a href="https://github.com/example/banking-app" class="link-button" target="_blank">📱 Repository</a></td>                    <td>PRJ-002</td>
+
+                    <td><a href="https://banking-demo.com" class="link-button" target="_blank">💰 Demo</a></td>                    <td>Mobile Banking App</td>
+
+                    <td></td>                    <td><a href="https://github.com/example/banking-app" class="link-button" target="_blank">📱 Repository</a></td>
+
+                    <td>🔄 Development</td>                    <td><a href="https://banking-demo.com" class="link-button" target="_blank">💰 Demo</a></td>
+
+                    <td>Mike Rodriguez</td>                    <td></td>
+
+                </tr>                    <td>🔄 Development</td>
+
+                <tr>                    <td>Mike Rodriguez</td>
+
+                    <td>PRJ-003</td>                </tr>
+
+                    <td>CRM Dashboard</td>                <tr>
+
+                    <td><a href="https://github.com/example/crm-dashboard" class="link-button" target="_blank">📦 Repository</a></td>                    <td>PRJ-003</td>
+
+                    <td><a href="https://crm-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>                    <td>CRM Dashboard</td>
+
+                    <td><a href="https://docs.crm.com" class="link-button" target="_blank">📖 Docs</a></td>                    <td><a href="https://github.com/example/crm-dashboard" class="link-button" target="_blank">📦 Repository</a></td>
+
+                    <td>✅ Active</td>                    <td><a href="https://crm-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+
+                    <td>Alice Johnson</td>                    <td><a href="https://docs.crm.com" class="link-button" target="_blank">📖 Docs</a></td>
+
+                </tr>                    <td>✅ Active</td>
+
+                <tr>                    <td>Alice Johnson</td>
+
+                    <td>PRJ-004</td>                </tr>
+
+                    <td>Inventory System</td>                <tr>
+
+                    <td><a href="https://github.com/example/inventory" class="link-button" target="_blank">📦 Repository</a></td>                    <td>PRJ-004</td>
+
+                    <td><a href="https://inventory-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>                    <td>Inventory System</td>
+
+                    <td></td>                    <td><a href="https://github.com/example/inventory" class="link-button" target="_blank">📦 Repository</a></td>
+
+                    <td>🔄 Development</td>                    <td><a href="https://inventory-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+
+                    <td>Bob Smith</td>                    <td></td>
+
+                </tr>                    <td>🔄 Development</td>
+
+                <tr>                    <td>Bob Smith</td>
+
+                    <td>PRJ-005</td>                </tr>
+
+                    <td>Analytics Tool</td>                <tr>
+
+                    <td><a href="https://github.com/example/analytics" class="link-button" target="_blank">📦 Repository</a></td>                    <td>PRJ-005</td>
+
+                    <td><a href="https://analytics-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>                    <td>Analytics Tool</td>
+
+                    <td><a href="https://docs.analytics.com" class="link-button" target="_blank">📖 Docs</a></td>                    <td><a href="https://github.com/example/analytics" class="link-button" target="_blank">📦 Repository</a></td>
+
+                    <td>🧪 Testing</td>                    <td><a href="https://analytics-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+
+                    <td>Carol Williams</td>                    <td><a href="https://docs.analytics.com" class="link-button" target="_blank">📖 Docs</a></td>
+
+                </tr>                    <td>🧪 Testing</td>
+
+            </tbody>                    <td>Carol Williams</td>
+
+        </table>                </tr>
+
+    </div>            </tbody>
+
+        </table>
+
+    <!-- Iframe Table Test Section -->    </div>
+
+    <div class="container">
+
+        <h2>🖼️ Iframe Table Test</h2>    <!-- Iframe Table Test Section -->
+
+        <p style="color: #666; margin-bottom: 20px;">    <div class="container">
+
+            This iframe contains a separate table to test the table row click functionality within iframes.        <h2>🖼️ Iframe Table Test</h2>
+
+            Try clicking on the table rows below to test the smart link detection!        <p style="color: #666; margin-bottom: 20px;">
+
+        </p>            This iframe contains a separate table to test the table row click functionality within iframes.
+
+                    Try clicking on the table rows below to test the smart link detection!
+
+        <iframe id="tableIframe" style="        </p>
+
+            width: 100%;        
+
+            height: 400px;        <iframe id="tableIframe" style="
+
+            border: 2px solid #ddd;            width: 100%;
+
+            border-radius: 8px;            height: 400px;
+
+            background: white;            border: 2px solid #ddd;
+
+        " srcdoc='            border-radius: 8px;
+
+<!DOCTYPE html>            background: white;
+
+<html>        " srcdoc='
+
+<head><!DOCTYPE html>
+
+    <style><html>
+
+        body {<head>
+
+            font-family: Arial, sans-serif;    <style>
+
+            margin: 20px;        body {
+
+            background: #f9f9f9;            font-family: Arial, sans-serif;
+
+        }            margin: 20px;
+
+        .iframe-table {            background: #f9f9f9;
+
+            width: 100%;        }
+
+            border-collapse: collapse;        .iframe-table {
+
+            background: white;            width: 100%;
+
+            border-radius: 8px;            border-collapse: collapse;
+
+            overflow: hidden;            background: white;
+
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);            border-radius: 8px;
+
+        }            overflow: hidden;
+
+        .iframe-table th {            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+            background: #4CAF50;        }
+
+            color: white;        .iframe-table th {
+
+            padding: 12px;            background: #4CAF50;
+
+            text-align: left;            color: white;
+
+            font-weight: bold;            padding: 12px;
+
+        }            text-align: left;
+
+        .iframe-table td {            font-weight: bold;
+
+            padding: 10px 12px;        }
+
+            border-bottom: 1px solid #eee;        .iframe-table td {
+
+        }            padding: 10px 12px;
+
+        .iframe-table tr:hover {            border-bottom: 1px solid #eee;
+
+            background: #f5f5f5;        }
+
+        }        .iframe-table tr:hover {
+
+        .iframe-table tr:nth-child(even) {            background: #f5f5f5;
+
+            background: #fafafa;        }
+
+        }        .iframe-table tr:nth-child(even) {
+
+        .iframe-table a {            background: #fafafa;
+
+            color: #2196F3;        }
+
+            text-decoration: none;        .iframe-table a {
+
+            padding: 4px 8px;            color: #2196F3;
+
+            border-radius: 4px;            text-decoration: none;
+
+            transition: background 0.2s;            padding: 4px 8px;
+
+        }            border-radius: 4px;
+
+        .iframe-table a:hover {            transition: background 0.2s;
+
+            background: #e3f2fd;        }
+
+            text-decoration: underline;        .iframe-table a:hover {
+
+        }            background: #e3f2fd;
+
+        h3 {            text-decoration: underline;
+
+            color: #333;        }
+
+            margin: 0 0 20px 0;        h3 {
+
+            text-align: center;            color: #333;
+
+        }            margin: 0 0 20px 0;
+
+        .note {            text-align: center;
+
+            background: #fff3cd;        }
+
+            border: 1px solid #ffeaa7;        .note {
+
+            padding: 10px;            background: #fff3cd;
+
+            border-radius: 5px;            border: 1px solid #ffeaa7;
+
+            margin-bottom: 20px;            padding: 10px;
+
+            color: #856404;            border-radius: 5px;
+
+        }            margin-bottom: 20px;
+
+    </style>            color: #856404;
+
+</head>        }
+
+<body>    </style>
+
+    <h3>📋 Projects Table (Inside Iframe)</h3></head>
+
+    <div class="note"><body>
+
+        <strong>Test Instructions:</strong><br>    <h3>📋 Projects Table (Inside Iframe)</h3>
+
+        • Single-click any row to auto-click the first link or choose from multiple links<br>    <div class="note">
+
+        • Double-click any row to set your column preference<br>        <strong>Test Instructions:</strong><br>
+
+        • Try clicking rows with no links to test row-above fallback        • Single-click any row to auto-click the first link or choose from multiple links<br>
+
+    </div>        • Double-click any row to set your column preference<br>
+
+            • Try clicking rows with no links to test row-above fallback
+
+    <table class="iframe-table">    </div>
+
+        <thead>    
+
+            <tr>    <table class="iframe-table">
+
+                <th>Project ID</th>        <thead>
+
+                <th>Project Name</th>            <tr>
+
+                <th>GitHub Repo</th>                <th>Project ID</th>
+
+                <th>Demo Link</th>                <th>Project Name</th>
+
+                <th>Documentation</th>                <th>GitHub Repo</th>
+
+                <th>Status</th>                <th>Demo Link</th>
+
+                <th>Team Lead</th>                <th>Documentation</th>
+
+            </tr>                <th>Status</th>
+
+        </thead>                <th>Team Lead</th>
+
+        <tbody>            </tr>
+
+            <tr>        </thead>
+
+                <td>PRJ-001</td>        <tbody>
+
+                <td>E-Commerce Platform</td>            <tr>
+
+                <td><a href="https://github.com/example/ecommerce" target="_blank">📦 Repository</a></td>                <td>PRJ-001</td>
+
+                <td><a href="https://demo.ecommerce.com" target="_blank">🌐 Live Demo</a></td>                <td>E-Commerce Platform</td>
+
+                <td><a href="https://docs.ecommerce.com" target="_blank">📖 Docs</a></td>                <td><a href="https://github.com/example/ecommerce" target="_blank">📦 Repository</a></td>
+
+                <td>✅ Active</td>                <td><a href="https://demo.ecommerce.com" target="_blank">🌐 Live Demo</a></td>
+
+                <td>Sarah Chen</td>                <td><a href="https://docs.ecommerce.com" target="_blank">📖 Docs</a></td>
+
+            </tr>                <td>✅ Active</td>
+
+            <tr>                <td>Sarah Chen</td>
+
+                <td>PRJ-002</td>            </tr>
+
+                <td>Mobile Banking App</td>            <tr>
+
+                <td><a href="https://github.com/example/banking-app" target="_blank">📱 Repository</a></td>                <td>PRJ-002</td>
+
+                <td><a href="https://banking-demo.com" target="_blank">💰 Demo</a></td>                <td>Mobile Banking App</td>
+
+                <td></td>                <td><a href="https://github.com/example/banking-app" target="_blank">📱 Repository</a></td>
+
+                <td>🔄 Development</td>                <td><a href="https://banking-demo.com" target="_blank">💰 Demo</a></td>
+
+                <td>Mike Rodriguez</td>                <td></td>
+
+            </tr>                <td>🔄 Development</td>
+
+        </tbody>                <td>Mike Rodriguez</td>
+
+    </table>            </tr>
+
+            </tbody>
+
+    <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px; font-size: 12px; color: #2e7d32;">    </table>
+
+        <strong>🎯 Simplified Testing Scenarios (2 rows only):</strong><br>    
+
+        • Row 1 (PRJ-001): Multiple links (GitHub, Demo, Docs) - test column preference<br>    <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px; font-size: 12px; color: #2e7d32;">
+
+        • Row 2 (PRJ-002): Two links (GitHub, Demo) - test auto-selection or preference<br>        <strong>🎯 Simplified Testing Scenarios (2 rows only):</strong><br>
+
+        <br>        • Row 1 (PRJ-001): Multiple links (GitHub, Demo, Docs) - test column preference<br>
+
+        <strong>🔍 Perfect for debugging:</strong> Easier to track which links are being processed!        • Row 2 (PRJ-002): Two links (GitHub, Demo) - test auto-selection or preference<br>
+
+    </div>        <br>
+
+</body>        <strong>🔍 Perfect for debugging:</strong> Easier to track which links are being processed!
+
+</html>    </div>
+
+        '></iframe></body>
+
+    </div></html>
+
+        '></iframe>
+
+    <script>    </div>
+
+        // Quick JavaScript test - remove blocking alert
+
+        console.log('🎯 JavaScript is working!');    <script>
+
+                // Quick JavaScript test - remove blocking alert
+
+        // Add visual indicator that JS is working        console.log('🎯 JavaScript is working!');
+
+        document.addEventListener('DOMContentLoaded', function() {        
+
+            console.log('🎯 DOM Content Loaded!');        // Add visual indicator that JS is working
+
+            const title = document.querySelector('h1');        document.addEventListener('DOMContentLoaded', function() {
+
+            if (title) {            console.log('🎯 DOM Content Loaded!');
+
+                title.style.border = '2px solid green';            const title = document.querySelector('h1');
+
+                title.title = 'JavaScript is working - green border added!';            if (title) {
+
+            }                title.style.border = '2px solid green';
+
+        });                title.title = 'JavaScript is working - green border added!';
+
+                    }
+
+        // Sample data for initial population        });
+
+        let projects = [        
+
+            {        // Sample data for initial population
+
+                id: "PRJ-001",        let projects = [
+
+                name: "E-Commerce Platform",            {
+
+                githubRepo: "https://github.com/example/ecommerce",                id: "PRJ-001",
+
+                demoLink: "https://demo.ecommerce.com",                name: "E-Commerce Platform",
+
+                documentation: "https://docs.ecommerce.com",                githubRepo: "https://github.com/example/ecommerce",
+
+                status: "✅ Active",                demoLink: "https://demo.ecommerce.com",
+
+                teamLead: "Sarah Chen"                documentation: "https://docs.ecommerce.com",
+
+            },                status: "✅ Active",
+
+            {                teamLead: "Sarah Chen"
+
+                id: "PRJ-002",            },
+
+                name: "Mobile Banking App",            {
+
+                githubRepo: "https://github.com/example/banking-app",                id: "PRJ-002",
+
+                demoLink: "https://banking-demo.com",                name: "Mobile Banking App",
+
+                documentation: "",                githubRepo: "https://github.com/example/banking-app",
+
+                status: "🔄 Development",                demoLink: "https://banking-demo.com",
+
+                teamLead: "Mike Rodriguez"                documentation: "",
+
+            },                status: "🔄 Development",
+
+            {                teamLead: "Mike Rodriguez"
+
+                id: "PRJ-003",            },
+
+                name: "CRM Dashboard",            {
+
+                githubRepo: "https://github.com/example/crm-dashboard",                id: "PRJ-003",
+
+                demoLink: "https://crm-demo.com",                name: "CRM Dashboard",
+
+                documentation: "https://docs.crm.com",                githubRepo: "https://github.com/example/crm-dashboard",
+
+                status: "✅ Active",                demoLink: "https://crm-demo.com",
+
+                teamLead: "Alice Johnson"                documentation: "https://docs.crm.com",
+
+            },                status: "✅ Active",
+
+            {                teamLead: "Alice Johnson"
+
+                id: "PRJ-004",            },
+
+                name: "Inventory System",            {
+
+                githubRepo: "https://github.com/example/inventory",                id: "PRJ-004",
+
+                demoLink: "https://inventory-demo.com",                name: "Inventory System",
+
+                documentation: "",                githubRepo: "https://github.com/example/inventory",
+
+                status: "🔄 Development",                demoLink: "https://inventory-demo.com",
+
+                teamLead: "Bob Smith"                documentation: "",
+
+            },                status: "🔄 Development",
+
+            {                teamLead: "Bob Smith"
+
+                id: "PRJ-005",            },
+
+                name: "Analytics Tool",            {
+
+                githubRepo: "https://github.com/example/analytics",                id: "PRJ-005",
+
+                demoLink: "https://analytics-demo.com",                name: "Analytics Tool",
+
+                documentation: "https://docs.analytics.com",                githubRepo: "https://github.com/example/analytics",
+
+                status: "🧪 Testing",                demoLink: "https://analytics-demo.com",
+
+                teamLead: "Carol Williams"                documentation: "https://docs.analytics.com",
+
+            }                status: "🧪 Testing",
+
+        ];                teamLead: "Carol Williams"
+
+            }
+
+        // Load data on page load        ];
+
+        window.onload = function() {
+
+            console.log('Page loaded, initial projects:', projects.length, 'items'); // Debug log        // Load data on page load
+
+                    window.onload = function() {
+
+            // Check if we're running in extension context            console.log('Page loaded, initial projects:', projects.length, 'items'); // Debug log
+
+            const isExtensionPage = window.location.protocol === 'chrome-extension:' || window.location.protocol === 'moz-extension:';            
+
+            console.log('🔍 Running in extension context:', isExtensionPage);            // Check if we're running in extension context
+
+            console.log('🔍 Current URL:', window.location.href);            const isExtensionPage = window.location.protocol === 'chrome-extension:' || window.location.protocol === 'moz-extension:';
+
+                        console.log('🔍 Running in extension context:', isExtensionPage);
+
+            // Check if content script is available            console.log('🔍 Current URL:', window.location.href);
+
+            setTimeout(() => {            
+
+                console.log('🔍 Checking for extension content script...');            // Check if content script is available
+
+                if (window.easyClickExtension) {            setTimeout(() => {
+
+                    console.log('✅ Extension content script detected!');                console.log('🔍 Checking for extension content script...');
+
+                } else {                if (window.easyClickExtension) {
+
+                    console.log('❌ Extension content script NOT detected');                    console.log('✅ Extension content script detected!');
+
+                    console.log('ℹ️  This is expected when opening test.html directly as file');                } else {
+
+                    console.log('ℹ️  Try right-clicking and selecting "🧪 Open Easy Click Test Page"');                    console.log('❌ Extension content script NOT detected');
+
+                }                    console.log('ℹ️  This is expected when opening test.html directly as file');
+
+            }, 1000);                    console.log('ℹ️  Try right-clicking and selecting "🧪 Open Easy Click Test Page"');
+
+                            }
+
+            // Load saved projects from localStorage, but fall back to default data            }, 1000);
+
+            const savedProjects = localStorage.getItem('projects');            
+
+            if (savedProjects && savedProjects !== '[]') {            // Load saved projects from localStorage, but fall back to default data
+
+                try {            const savedProjects = localStorage.getItem('projects');
+
+                    const parsed = JSON.parse(savedProjects);            if (savedProjects && savedProjects !== '[]') {
+
+                    if (parsed.length > 0) {                try {
+
+                        projects = parsed;                    const parsed = JSON.parse(savedProjects);
+
+                        console.log('Loaded projects from localStorage:', projects.length, 'items'); // Debug log                    if (parsed.length > 0) {
+
+                    }                        projects = parsed;
+
+                } catch (e) {                        console.log('Loaded projects from localStorage:', projects.length, 'items'); // Debug log
+
+                    console.log('Error parsing saved projects, using default data');                    }
+
+                }                } catch (e) {
+
+            }                    console.log('Error parsing saved projects, using default data');
+
+                            }
+
+            console.log('About to display projects table...'); // Debug log            }
+
+            // Always display the projects table            
+
+            displayProjectsTable();            console.log('About to display projects table...'); // Debug log
+
+                        // Always display the projects table
+
+            // Add event listeners for all buttons            displayProjectsTable();
+
+            setupEventListeners();            
+
+        };            // Add event listeners for all buttons
+
+                    setupEventListeners();
+
+        function setupEventListeners() {        };
+
+            // Action buttons        
+
+            document.querySelectorAll('[data-action]').forEach(button => {        function setupEventListeners() {
+
+                button.addEventListener('click', function(event) {            // Action buttons
+
+                    const action = event.target.getAttribute('data-action');            document.querySelectorAll('[data-action]').forEach(button => {
+
+                    switch(action) {                button.addEventListener('click', function(event) {
+
+                        case 'alert':                    const action = event.target.getAttribute('data-action');
+
+                            alert('Hello from cloned button!');                    switch(action) {
+
+                            break;                        case 'alert':
+
+                        case 'google':                            alert('Hello from cloned button!');
+
+                            window.open('https://google.com', '_blank');                            break;
+
+                            break;                        case 'google':
+
+                        case 'toggle-bg':                            window.open('https://google.com', '_blank');
+
+                            document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? '' : 'lightblue';                            break;
+
+                            break;                        case 'toggle-bg':
+
+                        case 'scroll-top':                            document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? '' : 'lightblue';
+
+                            window.scrollTo(0, 0);                            break;
+
+                            break;                        case 'scroll-top':
+
+                    }                            window.scrollTo(0, 0);
+
+                });                            break;
+
+            });                    }
+
+        }                });
+
+            });
+
+        function displayProjectsTable() {        }
+
+            const tableBody = document.getElementById('tableBody');
+
+                    function displayProjectsTable() {
+
+            tableBody.innerHTML = '';            const tableBody = document.getElementById('tableBody');
+
+                        
+
+            console.log('Displaying projects:', projects); // Debug log            tableBody.innerHTML = '';
+
+                        
+
+            projects.forEach(project => {            console.log('Displaying projects:', projects); // Debug log
+
+                const row = document.createElement('tr');            
+
+                row.innerHTML = `            projects.forEach(project => {
+
+                    <td>${project.id}</td>                const row = document.createElement('tr');
+
+                    <td>${project.name}</td>                row.innerHTML = `
+
+                    <td><a href="${project.githubRepo}" class="link-button" target="_blank">📦 Repository</a></td>                    <td>${project.id}</td>
+
+                    <td><a href="${project.demoLink}" class="link-button" target="_blank">🌐 Live Demo</a></td>                    <td>${project.name}</td>
+
+                    <td>${project.documentation ? `<a href="${project.documentation}" class="link-button" target="_blank">📖 Docs</a>` : ''}</td>                    <td><a href="${project.githubRepo}" class="link-button" target="_blank">📦 Repository</a></td>
+
+                    <td>${project.status}</td>                    <td><a href="${project.demoLink}" class="link-button" target="_blank">🌐 Live Demo</a></td>
+
+                    <td>${project.teamLead}</td>                    <td>${project.documentation ? `<a href="${project.documentation}" class="link-button" target="_blank">📖 Docs</a>` : ''}</td>
+
+                `;                    <td>${project.status}</td>
+
+                tableBody.appendChild(row);                    <td>${project.teamLead}</td>
+
+            });                `;
+
+                            tableBody.appendChild(row);
+
+            console.log('Table populated with', projects.length, 'projects'); // Debug log            });
+
+        }            
+
+    </script>            console.log('Table populated with', projects.length, 'projects'); // Debug log
+
+</body>        }
+
+</html>    </script>
+</body>
+</html>

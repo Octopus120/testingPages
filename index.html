@@ -178,7 +178,7 @@
     </style>
 </head>
 <body>
-        <div class="container">
+    <div class="container">
         <h1>🎯 Easy Click Extension - Testing Suite</h1>
         <p style="text-align: center; color: #666; font-size: 18px;">
             Comprehensive test page for the Easy Click Chrome extension.<br>
@@ -261,7 +261,11 @@
     <div class="container" id="dataContainer">
         <div class="success-message" id="successMessage" style="display: none;"></div>
         
-        <h2>� Projects Table</h2>
+        <h2>📊 Main Projects Table - Column Header Test</h2>
+        <p style="color: #666; margin-bottom: 15px;">
+            <strong>Test Objective:</strong> Verify that column selection dialog shows meaningful headers like "Project Name", "GitHub Repo" instead of generic "Column 1", "Column 2".
+        </p>
+        
         <table class="data-table" id="employeeTable">
             <thead>
                 <tr>
@@ -457,7 +461,7 @@
     </div>
 
     <script>
-        // Quick JavaScript test - remove blocking alert
+        // JavaScript test and debugging
         console.log('🎯 JavaScript is working!');
         
         // Add visual indicator that JS is working
@@ -521,7 +525,7 @@
 
         // Load data on page load
         window.onload = function() {
-            console.log('Page loaded, initial projects:', projects.length, 'items'); // Debug log
+            console.log('Page loaded, initial projects:', projects.length, 'items');
             
             // Check if we're running in extension context
             const isExtensionPage = window.location.protocol === 'chrome-extension:' || window.location.protocol === 'moz-extension:';
@@ -547,14 +551,14 @@
                     const parsed = JSON.parse(savedProjects);
                     if (parsed.length > 0) {
                         projects = parsed;
-                        console.log('Loaded projects from localStorage:', projects.length, 'items'); // Debug log
+                        console.log('Loaded projects from localStorage:', projects.length, 'items');
                     }
                 } catch (e) {
                     console.log('Error parsing saved projects, using default data');
                 }
             }
             
-            console.log('About to display projects table...'); // Debug log
+            console.log('About to display projects table...');
             // Always display the projects table
             displayProjectsTable();
             
@@ -588,9 +592,14 @@
         function displayProjectsTable() {
             const tableBody = document.getElementById('tableBody');
             
+            if (!tableBody) {
+                console.error('Table body element not found!');
+                return;
+            }
+            
             tableBody.innerHTML = '';
             
-            console.log('Displaying projects:', projects); // Debug log
+            console.log('Displaying projects:', projects);
             
             projects.forEach(project => {
                 const row = document.createElement('tr');
@@ -606,7 +615,7 @@
                 tableBody.appendChild(row);
             });
             
-            console.log('Table populated with', projects.length, 'projects'); // Debug log
+            console.log('Table populated with', projects.length, 'projects');
         }
     </script>
 </body>
