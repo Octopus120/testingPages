@@ -58,4 +58,4 @@ Dedicated testing environment for the **Easy Click Chrome Extension**. This repo
 
 ---
 
-*This testing page runs entirely client-side JavaScript and works perfectly with GitHub Pages.*
+*This testing page runs entirely client-side JavaScript and works perfectly with GitHub Pages.*# testingPages
