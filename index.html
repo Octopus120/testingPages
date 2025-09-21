@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Click Extension - Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+        
+        .btn-warning {
+            background: #FF9800;
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background: #F57C00;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #d32f2f;
+            transform: translateY(-2px);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .link-button {
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+        
+        .link-button:hover {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .test-section {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+        <h1>🎯 Easy Click Extension - Testing Suite</h1>
+        <p style="text-align: center; color: #666; font-size: 18px;">
+            Comprehensive test page for the Easy Click Chrome extension.<br>
+            <strong>Install the extension, then test the functionality below!</strong>
+        </p>
+        
+        <div style="background: #e8f5e9; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #155724;">📋 How to Test the Extension:</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: #155724;">
+                <div>
+                    <h4>🔘 Button Cloning Test:</h4>
+                    <ul>
+                        <li><strong>Left-click + drag</strong> any button below</li>
+                        <li>Button should be cloned to extension sidebar</li>
+                        <li>Test different button types and actions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>📊 Table Row Click Test:</h4>
+                    <ul>
+                        <li><strong>Single-click</strong> any table row</li>
+                        <li>Should show column selection dialog</li>
+                        <li>Headers should be meaningful (not "Column 1")</li>
+                        <li>Check console for debug output</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container test-section">
+        <h2>🧪 Action Test Buttons</h2>
+        <p>These buttons demonstrate various actions that can be cloned:</p>
+        <div class="action-buttons">
+            <button class="btn btn-primary" data-action="alert">🎉 Show Alert</button>
+            <button class="btn btn-secondary" data-action="google">🌐 Open Google</button>
+            <button class="btn btn-warning" data-action="toggle-bg">🎨 Toggle Background</button>
+            <button class="btn btn-danger" data-action="scroll-top">⬆️ Scroll to Top</button>
+            <a href="https://github.com" class="btn btn-primary" target="_blank">🔗 GitHub Link</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="btn btn-secondary" target="_blank">📝 JavaScript Docs</a>
+        </div>
+    </div>
+
+    <div class="container" id="dataContainer">
+        <div class="success-message" id="successMessage" style="display: none;"></div>
+        
+        <h2>� Projects Table</h2>
+        <table class="data-table" id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                    <th>GitHub Repo</th>
+                    <th>Demo Link</th>
+                    <th>Documentation</th>
+                    <th>Status</th>
+                    <th>Team Lead</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Sample data will be populated here by JavaScript -->
+                <!-- Fallback static rows in case JavaScript fails -->
+                <tr>
+                    <td>PRJ-001</td>
+                    <td>E-Commerce Platform</td>
+                    <td><a href="https://github.com/example/ecommerce" class="link-button" target="_blank">📦 Repository</a></td>
+                    <td><a href="https://demo.ecommerce.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+                    <td><a href="https://docs.ecommerce.com" class="link-button" target="_blank">📖 Docs</a></td>
+                    <td>✅ Active</td>
+                    <td>Sarah Chen</td>
+                </tr>
+                <tr>
+                    <td>PRJ-002</td>
+                    <td>Mobile Banking App</td>
+                    <td><a href="https://github.com/example/banking-app" class="link-button" target="_blank">📱 Repository</a></td>
+                    <td><a href="https://banking-demo.com" class="link-button" target="_blank">💰 Demo</a></td>
+                    <td></td>
+                    <td>🔄 Development</td>
+                    <td>Mike Rodriguez</td>
+                </tr>
+                <tr>
+                    <td>PRJ-003</td>
+                    <td>CRM Dashboard</td>
+                    <td><a href="https://github.com/example/crm-dashboard" class="link-button" target="_blank">📦 Repository</a></td>
+                    <td><a href="https://crm-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+                    <td><a href="https://docs.crm.com" class="link-button" target="_blank">📖 Docs</a></td>
+                    <td>✅ Active</td>
+                    <td>Alice Johnson</td>
+                </tr>
+                <tr>
+                    <td>PRJ-004</td>
+                    <td>Inventory System</td>
+                    <td><a href="https://github.com/example/inventory" class="link-button" target="_blank">📦 Repository</a></td>
+                    <td><a href="https://inventory-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+                    <td></td>
+                    <td>🔄 Development</td>
+                    <td>Bob Smith</td>
+                </tr>
+                <tr>
+                    <td>PRJ-005</td>
+                    <td>Analytics Tool</td>
+                    <td><a href="https://github.com/example/analytics" class="link-button" target="_blank">📦 Repository</a></td>
+                    <td><a href="https://analytics-demo.com" class="link-button" target="_blank">🌐 Live Demo</a></td>
+                    <td><a href="https://docs.analytics.com" class="link-button" target="_blank">📖 Docs</a></td>
+                    <td>🧪 Testing</td>
+                    <td>Carol Williams</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Iframe Table Test Section -->
+    <div class="container">
+        <h2>🖼️ Iframe Table Test</h2>
+        <p style="color: #666; margin-bottom: 20px;">
+            This iframe contains a separate table to test the table row click functionality within iframes.
+            Try clicking on the table rows below to test the smart link detection!
+        </p>
+        
+        <iframe id="tableIframe" style="
+            width: 100%;
+            height: 400px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        " srcdoc='
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f9f9f9;
+        }
+        .iframe-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .iframe-table th {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .iframe-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .iframe-table tr:hover {
+            background: #f5f5f5;
+        }
+        .iframe-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+        .iframe-table a {
+            color: #2196F3;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .iframe-table a:hover {
+            background: #e3f2fd;
+            text-decoration: underline;
+        }
+        h3 {
+            color: #333;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <h3>📋 Projects Table (Inside Iframe)</h3>
+    <div class="note">
+        <strong>Test Instructions:</strong><br>
+        • Single-click any row to auto-click the first link or choose from multiple links<br>
+        • Double-click any row to set your column preference<br>
+        • Try clicking rows with no links to test row-above fallback
+    </div>
+    
+    <table class="iframe-table">
+        <thead>
+            <tr>
+                <th>Project ID</th>
+                <th>Project Name</th>
+                <th>GitHub Repo</th>
+                <th>Demo Link</th>
+                <th>Documentation</th>
+                <th>Status</th>
+                <th>Team Lead</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PRJ-001</td>
+                <td>E-Commerce Platform</td>
+                <td><a href="https://github.com/example/ecommerce" target="_blank">📦 Repository</a></td>
+                <td><a href="https://demo.ecommerce.com" target="_blank">🌐 Live Demo</a></td>
+                <td><a href="https://docs.ecommerce.com" target="_blank">📖 Docs</a></td>
+                <td>✅ Active</td>
+                <td>Sarah Chen</td>
+            </tr>
+            <tr>
+                <td>PRJ-002</td>
+                <td>Mobile Banking App</td>
+                <td><a href="https://github.com/example/banking-app" target="_blank">📱 Repository</a></td>
+                <td><a href="https://banking-demo.com" target="_blank">💰 Demo</a></td>
+                <td></td>
+                <td>🔄 Development</td>
+                <td>Mike Rodriguez</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px; font-size: 12px; color: #2e7d32;">
+        <strong>🎯 Simplified Testing Scenarios (2 rows only):</strong><br>
+        • Row 1 (PRJ-001): Multiple links (GitHub, Demo, Docs) - test column preference<br>
+        • Row 2 (PRJ-002): Two links (GitHub, Demo) - test auto-selection or preference<br>
+        <br>
+        <strong>🔍 Perfect for debugging:</strong> Easier to track which links are being processed!
+    </div>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <script>
+        // Quick JavaScript test - remove blocking alert
+        console.log('🎯 JavaScript is working!');
+        
+        // Add visual indicator that JS is working
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 DOM Content Loaded!');
+            const title = document.querySelector('h1');
+            if (title) {
+                title.style.border = '2px solid green';
+                title.title = 'JavaScript is working - green border added!';
+            }
+        });
+        
+        // Sample data for initial population
+        let projects = [
+            {
+                id: "PRJ-001",
+                name: "E-Commerce Platform",
+                githubRepo: "https://github.com/example/ecommerce",
+                demoLink: "https://demo.ecommerce.com",
+                documentation: "https://docs.ecommerce.com",
+                status: "✅ Active",
+                teamLead: "Sarah Chen"
+            },
+            {
+                id: "PRJ-002",
+                name: "Mobile Banking App",
+                githubRepo: "https://github.com/example/banking-app",
+                demoLink: "https://banking-demo.com",
+                documentation: "",
+                status: "🔄 Development",
+                teamLead: "Mike Rodriguez"
+            },
+            {
+                id: "PRJ-003",
+                name: "CRM Dashboard",
+                githubRepo: "https://github.com/example/crm-dashboard",
+                demoLink: "https://crm-demo.com",
+                documentation: "https://docs.crm.com",
+                status: "✅ Active",
+                teamLead: "Alice Johnson"
+            },
+            {
+                id: "PRJ-004",
+                name: "Inventory System",
+                githubRepo: "https://github.com/example/inventory",
+                demoLink: "https://inventory-demo.com",
+                documentation: "",
+                status: "🔄 Development",
+                teamLead: "Bob Smith"
+            },
+            {
+                id: "PRJ-005",
+                name: "Analytics Tool",
+                githubRepo: "https://github.com/example/analytics",
+                demoLink: "https://analytics-demo.com",
+                documentation: "https://docs.analytics.com",
+                status: "🧪 Testing",
+                teamLead: "Carol Williams"
+            }
+        ];
+
+        // Load data on page load
+        window.onload = function() {
+            console.log('Page loaded, initial projects:', projects.length, 'items'); // Debug log
+            
+            // Check if we're running in extension context
+            const isExtensionPage = window.location.protocol === 'chrome-extension:' || window.location.protocol === 'moz-extension:';
+            console.log('🔍 Running in extension context:', isExtensionPage);
+            console.log('🔍 Current URL:', window.location.href);
+            
+            // Check if content script is available
+            setTimeout(() => {
+                console.log('🔍 Checking for extension content script...');
+                if (window.easyClickExtension) {
+                    console.log('✅ Extension content script detected!');
+                } else {
+                    console.log('❌ Extension content script NOT detected');
+                    console.log('ℹ️  This is expected when opening test.html directly as file');
+                    console.log('ℹ️  Try right-clicking and selecting "🧪 Open Easy Click Test Page"');
+                }
+            }, 1000);
+            
+            // Load saved projects from localStorage, but fall back to default data
+            const savedProjects = localStorage.getItem('projects');
+            if (savedProjects && savedProjects !== '[]') {
+                try {
+                    const parsed = JSON.parse(savedProjects);
+                    if (parsed.length > 0) {
+                        projects = parsed;
+                        console.log('Loaded projects from localStorage:', projects.length, 'items'); // Debug log
+                    }
+                } catch (e) {
+                    console.log('Error parsing saved projects, using default data');
+                }
+            }
+            
+            console.log('About to display projects table...'); // Debug log
+            // Always display the projects table
+            displayProjectsTable();
+            
+            // Add event listeners for all buttons
+            setupEventListeners();
+        };
+        
+        function setupEventListeners() {
+            // Action buttons
+            document.querySelectorAll('[data-action]').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    const action = event.target.getAttribute('data-action');
+                    switch(action) {
+                        case 'alert':
+                            alert('Hello from cloned button!');
+                            break;
+                        case 'google':
+                            window.open('https://google.com', '_blank');
+                            break;
+                        case 'toggle-bg':
+                            document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? '' : 'lightblue';
+                            break;
+                        case 'scroll-top':
+                            window.scrollTo(0, 0);
+                            break;
+                    }
+                });
+            });
+        }
+
+        function displayProjectsTable() {
+            const tableBody = document.getElementById('tableBody');
+            
+            tableBody.innerHTML = '';
+            
+            console.log('Displaying projects:', projects); // Debug log
+            
+            projects.forEach(project => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${project.id}</td>
+                    <td>${project.name}</td>
+                    <td><a href="${project.githubRepo}" class="link-button" target="_blank">📦 Repository</a></td>
+                    <td><a href="${project.demoLink}" class="link-button" target="_blank">🌐 Live Demo</a></td>
+                    <td>${project.documentation ? `<a href="${project.documentation}" class="link-button" target="_blank">📖 Docs</a>` : ''}</td>
+                    <td>${project.status}</td>
+                    <td>${project.teamLead}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            console.log('Table populated with', projects.length, 'projects'); // Debug log
+        }
+    </script>
+</body>
+</html>

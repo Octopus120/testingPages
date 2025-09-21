@@ -1,0 +1,23 @@
+# GitHub Pages configuration for Easy Click Extension Testing
+title: "Easy Click Extension - Testing Suite"
+description: "Comprehensive test page for the Easy Click Chrome extension - button cloning and table functionality tests"
+
+# Use clean theme for testing
+theme: minima
+
+# GitHub Pages plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Custom navigation
+header_pages:
+  - README.md
+
+# Site settings
+author: "Octopus120"
+github_username: "Octopus120"
+
+# SEO settings
+lang: en
+timezone: America/New_York
