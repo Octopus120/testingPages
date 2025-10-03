@@ -377,9 +377,66 @@
     </style>
 </head>
 <body>
-   
+    <h3>📋 Projects Table (Inside Iframe)</h3>
+    <div class="note">
+        <strong>Test Instructions:</strong><br>
+        • Single-click any row to auto-click the first link or choose from multiple links<br>
+        • Double-click any row to set your column preference<br>
+        • Try clicking rows with no links to test row-above fallback
+    </div>
     
-  
+    <table class="iframe-table">
+        <thead>
+            <tr>
+                <th>Project ID</th>
+                <th>Project Name</th>
+                <th>GitHub Repo</th>
+                <th>Demo Link</th>
+                <th>Documentation</th>
+                <th>Updated at</th>
+                <th>Team Lead</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PRJ-301</td>
+                <td>Reporting Engine</td>
+                <td><a href="https://github.com/iframe-org/reporting-engine" target="_blank">Reporting Repo</a></td>
+                <td><a href="https://demo.reportingengine.com" target="_blank">Reporting Demo</a></td>
+                <td><a href="https://docs.reportingengine.com" target="_blank">Reporting Docs</a></td>
+                <td>2025-09-27 08:00</td>
+                <td>Emily Stone</td>
+            </tr>
+            <tr>
+                <td>PRJ-302</td>
+                <td>Billing Suite</td>
+                <td><a href="https://github.com/iframe-org/billing-suite" target="_blank">Billing Repo</a></td>
+                <td><a href="https://demo.billingsuite.com" target="_blank">Billing Demo</a></td>
+                <td><a href="https://docs.billingsuite.com" target="_blank">Billing Docs</a></td>
+                <td>2025-09-26 13:15</td>
+                <td>Oscar Lee</td>
+            </tr>
+            <tr>
+                <td>PRJ-303</td>
+                <td>Support Portal</td>
+                <td><a href="https://github.com/iframe-org/support-portal" target="_blank">Support Repo</a></td>
+                <td><a href="https://demo.supportportal.com" target="_blank">Support Demo</a></td>
+                <td><a href="https://docs.supportportal.com" target="_blank">Support Docs</a></td>
+                <td>2025-09-25 17:40</td>
+                <td>Fatima Zahra</td>
+            </tr>
+            <tr>
+                <td>PRJ-304</td>
+                <td>Marketing Hub</td>
+                <td><a href="https://github.com/iframe-org/marketing-hub" target="_blank">Marketing Repo</a></td>
+                <td><a href="https://demo.marketinghub.com" target="_blank">Marketing Demo</a></td>
+                <td><a href="https://docs.marketinghub.com" target="_blank">Marketing Docs</a></td>
+                <td>2025-09-24 10:05</td>
+                <td>Ivan Petrov</td>
+            </tr>
+        </tbody>
+    </table>
+    
     <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px; font-size: 12px; color: #2e7d32;">
         <strong>🎯 Simplified Testing Scenarios (2 rows only):</strong><br>
         • Row 1 (PRJ-001): Multiple links (GitHub, Demo, Docs) - test column preference<br>
@@ -409,8 +466,45 @@
         // Sample data for initial population
         let projects = [
             {
-           
-            
+                id: "PRJ-201",
+                name: "Analytics Dashboard",
+                githubRepo: "https://github.com/unique-org/analytics-dashboard",
+                githubText: "Analytics Repo",
+                demoLink: "https://demo.analyticsdashboard.com",
+                demoText: "Analytics Demo",
+                documentation: "https://docs.analyticsdashboard.com",
+                docText: "Analytics Docs",
+                updatedAt: "2025-09-26 11:00",
+                status: "✅ Active",
+                teamLead: "Alex Kim"
+            },
+            {
+                id: "PRJ-202",
+                name: "Customer Portal",
+                githubRepo: "https://github.com/another-org/customer-portal",
+                githubText: "Customer Repo",
+                demoLink: "https://demo.customerportal.com",
+                demoText: "Customer Demo",
+                documentation: "https://docs.customerportal.com",
+                docText: "Customer Docs",
+                updatedAt: "2025-09-24 16:20",
+                status: "🔄 Development",
+                teamLead: "Priya Singh"
+            },
+            {
+                id: "PRJ-203",
+                name: "Inventory Manager",
+                githubRepo: "https://github.com/unique-org/inventory-manager",
+                githubText: "Inventory Repo",
+                demoLink: "https://demo.inventorymanager.com",
+                demoText: "Inventory Demo",
+                documentation: "https://docs.inventorymanager.com",
+                docText: "Inventory Docs",
+                updatedAt: "2025-09-23 09:30",
+                status: "🛠️ Maintenance",
+                teamLead: "Linda Park"
+            },
+            {
                 id: "PRJ-204",
                 name: "HR Suite",
                 githubRepo: "https://github.com/another-org/hr-suite",

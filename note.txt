@@ -1,0 +1,111 @@
+
+Navigated to file:///Users/ld32/projects/testingPages/index.html
+🔍 Is ServiceNow domain? false content.js:33:13
+✅ initializeTableRowFunctionality: Successfully loaded table-specific column preferences: 
+Object { "headers-Project ID-Project Name-GitHub Repo": 2 }
+content.js:5965:21
+✅ initializeTableRowFunctionality: Successfully loaded table-specific time column preferences: 
+Object { "headers-Project ID-Project Name-GitHub Repo": 5 }
+content.js:5990:21
+🔄 restoreHighlightsOnPageLoad called - isRestoring: false, timeSince: 1758673770289ms, skipIframes: false, caller: unknown content.js:6387:13
+🔄 Starting highlight restoration (1758673770289ms since last call) content.js:6401:13
+🏠 About to process main document... content.js:6558:17
+📄 Processing document: "main document" (main) content.js:6432:21
+🔍 Found 1 standard HTML tables in main document content.js:6436:21
+🔍 Found 0 ServiceNow grids in main document content.js:6440:21
+🔍 Total table-like elements to process: 1 in main document content.js:6444:21
+🔍 Found 5 total links in table/grid "headers-Project ID-Project Name-GitHub Repo" (main document), filtering for preferred column 3... content.js:6460:25
+✅ Link is in preferred column 3 for table "headers-Project ID-Project Name-GitHub Repo" - generating ID content.js:6079:13
+🔍 Generated text-based link ID: "headersPro__Repository" for link: 
+Object { tableId: "headers-Project ID-Project Name-GitHub Repo", preferredColumn: 3, text: "📦 Repository", href: "https://github.com/example/ecommerce", linkIdLength: 22 }
+content.js:6118:17
+🔄 Checking table/grid "headers-Project ID-Project Name-GitHub Repo" preferred column link for highlight restoration with ID: "headersPro__Repository" content.js:6483:29
+✅ Link is in preferred column 3 for table "headers-Project ID-Project Name-GitHub Repo" - generating ID content.js:6079:13
+🔍 Generated text-based link ID: "headersPro__Repository" for link: 
+Object { tableId: "headers-Project ID-Project Name-GitHub Repo", preferredColumn: 3, text: "📱 Repository", href: "https://github.com/example/banking-app", linkIdLength: 22 }
+content.js:6118:17
+🔄 Checking table/grid "headers-Project ID-Project Name-GitHub Repo" preferred column link for highlight restoration with ID: "headersPro__Repository" content.js:6483:29
+✅ Checked 2 links in preferred column 3 for table/grid "headers-Project ID-Project Name-GitHub Repo" in main document content.js:6550:25
+🏠 Finished processing main document content.js:6560:17
+🖼️ Found 1 iframes to process content.js:6564:17
+📄 Processing document: "iframe 1" (iframe-file:///Users/ld32/projects/testingPages/index.html) content.js:6432:21
+🔍 Found 0 standard HTML tables in iframe 1 content.js:6436:21
+🔍 Found 0 ServiceNow grids in iframe 1 content.js:6440:21
+🔍 Total table-like elements to process: 0 in iframe 1 content.js:6444:21
+✅ Iframe highlighting completed - processed 1 iframes, flag set to prevent duplicates content.js:6584:25
+� Immediate highlight restoration enabled content.js:6902:13
+🚀 INITIAL LOAD: Starting table detection and handler setup content.js:7233:9
+🚀 INITIAL LOAD: Page URL: file:///Users/ld32/projects/testingPages/index.html content.js:7234:9
+🚀 INITIAL LOAD: Standard HTML table details: content.js:7244:13
+🚀 INITIAL LOAD: Table 1: ID="employeeTable", Class="data-table", Rows=3, Cols=7, Visible=true, Parent=DIV content.js:7252:17
+🚀 INITIAL LOAD: Table 1 Row 1: "Project ID
+                    Project Name
+                    GitHub Repo
+                    Demo..." content.js:7258:21
+🚀 INITIAL LOAD: Table 1 Row 2: "PRJ-001
+                    E-Commerce Platform
+                    📦 Repository
+                  ..." content.js:7258:21
+🚀 INITIAL LOAD: Table 1 Row 3: "PRJ-002
+                    Mobile Banking App
+                    📱 Repository
+                   ..." content.js:7258:21
+🚀 INITIAL LOAD: Found 0 potential ServiceNow grid/table components content.js:7267:9
+🚀 INITIAL LOAD: No ServiceNow grid components found on initial load content.js:7304:13
+🚀 INITIAL LOAD: Found 1 iframes on script load content.js:7309:9
+🚀 INITIAL LOAD: Iframe 1: src="same-origin", name="unnamed" content.js:7312:13
+🚀 INITIAL LOAD: Iframe 1 has 0 tables content.js:7316:21
+🎧 ServiceNow Events: Setting up event listeners for dynamic content loading content.js:7466:13
+🔍 OBSERVER SETUP: Starting iframeObserver on document.body content.js:7716:9
+🔍 OBSERVER SETUP: document.body exists: true content.js:7717:9
+🔍 OBSERVER SETUP: iframeObserver started successfully content.js:7719:9
+📋 OBSERVER SETUP: Starting tableObserver on document.body content.js:7822:9
+📋 OBSERVER SETUP: document.body exists: true content.js:7823:9
+📋 OBSERVER SETUP: tableObserver started successfully content.js:7830:9
+✅ Extension ready! Console commands: content.js:9764:9
+  - checkTables() : Check all tables/grids content.js:9765:9
+  - getAllHeaders() : Show all table headers content.js:9766:9
+  - findTablesByHeader('text') : Find tables by header text content.js:9767:9
+🔧 Table detection functions defined globally: function function function content.js:9925:9
+🎯 DOM Content Loaded! index.html:442:21
+[EASYCLICK-DEBUG] DOMContentLoaded event fired content.js:1820:13
+Page loaded, initial projects: 2 items index.html:476:21
+🔍 Running in extension context: false index.html:480:21
+🔍 Current URL: file:///Users/ld32/projects/testingPages/index.html index.html:481:21
+About to display projects table... index.html:509:21
+Displaying projects: 
+Array [ {…}, {…} ]
+index.html:550:21
+Table populated with 2 projects index.html:566:21
+[EASYCLICK-DEBUG] Window load event fired content.js:1810:13
+🔧 Extension Mode: DEVELOPMENT content.js:9932:25
+📋 Extension Info: 
+Object { id: "easyclick@firefox.extension", version: "1.2", installType: "development", name: "Easy Click dev" }
+content.js:9933:25
+🔧 Running in DEVELOPMENT mode - Debug features enabled content.js:9953:17
+[EASYCLICK-DEBUG] Calling initializeExtension from DOMContentLoaded content.js:1822:17
+[EASYCLICK-DEBUG] initializeExtension() called at 2025-09-24T00:29:30.804Z content.js:1837:13
+[EASYCLICK-DEBUG] Document ready state: complete content.js:1838:13
+[EASYCLICK-DEBUG] Window loaded: true content.js:1839:13
+[EASYCLICK-DEBUG] getPathInfo(): 
+Object { currentUrl: "file:///Users/ld32/projects/testingPages/index.html", pathInfo: {…}, hasHyphen: false, hasDots: false, hostnameLength: 0, pathNormalized: false }
+content.js:679:13
+[EASYCLICK-DEBUG] Extension initialization: 
+Object { pathInfo: {…}, currentURL: "file:///Users/ld32/projects/testingPages/index.html", documentBody: true, bodyChildren: 6 }
+content.js:1844:17
+[EASYCLICK-DEBUG] Extension ENABLED for path: /Users/ld32/projects/testingPages/index.html (Always Enabled) - Initializing features content.js:1852:17
+[EASYCLICK-DEBUG] Starting feature initialization... content.js:1855:17
+🔍 Reading button areas from storage for URL: file:///Users/ld32/projects/testingPages/index.html content.js:3599:13
+[EASYCLICK-DEBUG] getPathInfo(): 
+Object { currentUrl: "file:///Users/ld32/projects/testingPages/index.html", pathInfo: {…}, hasHyphen: false, hasDots: false, hostnameLength: 0, pathNormalized: false }
+content.js:679:13
+[EASYCLICK-DEBUG] getPathSpecificKey(): 
+Object { currentUrl: "file:///Users/ld32/projects/testingPages/index.html", hostname: "", originalPathname: "/Users/ld32/projects/testingPages/index.html", normalizedPathname: "/Users/ld32/projects/testingPages/index.html", pathKey: "/Users/ld32/projects/testingPages/index.html", encodedPath: "L1VzZXJzL2xkMzIvcHJvamVjdHMvdGVzdGluZ1BhZ2VzL2luZGV4Lmh0bWw_", finalKey: "extensionEnabled_L1VzZXJzL2xkMzIvcHJvamVjdHMvdGVzdGluZ1BhZ2VzL2luZGV4Lmh0bWw_", prefix: "extensionEnabled", isServiceNow: false }
+content.js:523:13
+[EASYCLICK-DEBUG] readButtonAreas() completed content.js:1859:21
+[EASYCLICK-DEBUG] createDefaultButtons() called at 2025-09-24T00:29:30.809Z content.js:1893:13
+[EASYCLICK-DEBUG] Document body exists: true content.js:1894:13
+✅ Monitoring state reset - ready for next monitoring cycle content.js:6748:21
+
+​
+
