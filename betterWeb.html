@@ -30,5 +30,48 @@
       <iframe id="gsft_main" name="gsft_main" src="incident_list.do.html"></iframe>
     </main>
   </div>
+  <script>
+    (function () {
+      function attachIframeLoad() {
+        const frame = document.getElementById('gsft_main');
+        if (!frame) return;
+
+        const onLoaded = () => {
+          try {
+            const src = frame.src || frame.getAttribute('src');
+            console.log('[BetterWeb Test] iframe loaded:', src);
+          } catch (e) {
+            console.log('[BetterWeb Test] iframe loaded (src unavailable)');
+          }
+        };
+
+        // Listen for future navigations
+        frame.addEventListener('load', onLoaded);
+
+        // If the iframe content is already loaded before we bound the handler, fire once
+        try {
+          const doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+          if (doc && (doc.readyState === 'complete' || doc.readyState === 'interactive')) {
+            onLoaded();
+          }
+        } catch (e) {
+          // Cross-origin would throw here; safe to ignore in our local test harness
+        }
+
+        // Optional: log clicks that target the iframe
+        document.querySelectorAll('nav a[target="gsft_main"]').forEach(a => {
+          a.addEventListener('click', () => {
+            console.log('[BetterWeb Test] nav click ->', a.getAttribute('href'));
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachIframeLoad);
+      } else {
+        attachIframeLoad();
+      }
+    })();
+  </script>
 </body>
 </html>
